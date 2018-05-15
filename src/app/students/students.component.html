@@ -1,0 +1,52 @@
+﻿<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Student List
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+        <th>S.no</th>
+        <th>student</th>
+        <th>Batch</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of studentlist">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.batches[0].name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="card ">
+    <div class="card-header">
+      ADD Student
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="name">Student Name</label>
+          <input type="text" id="name" class="form-control" required #inp>
+        </div>
+        <select class="custom-select" #courseId>
+          <option selected>Select Course</option>
+          <option *ngFor ="let c of courselist" [value]="c.id">{{c.name}}</option>
+        </select>
+        <br>
+        <select class="custom-select" #batchId>
+          <option selected>Select Batch</option>
+          <option *ngFor ="let c of batchlist" [value]="c.id">{{c.name}}</option>
+        </select>
+        <br>
+        <div class="form-check">
+          <button class="btn btn-primary" (click)="addStudent(inp.value,batchId.value,courseId.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>

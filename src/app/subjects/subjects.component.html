@@ -1,0 +1,47 @@
+﻿<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Subject List
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+        <th>S.no</th>
+        <th>Course</th>
+        <th>Subject</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of subjectlist">
+            <td>{{s.id}}</td>
+            <td>{{s.course.name}}</td>
+            <td>{{s.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="card ">
+    <div class="card-header">
+      ADD Subjects
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="name">Subject Name</label>
+          <input type="text" id="name" class="form-control" required #inp>
+        </div>
+        <select class="custom-select" #courseId>
+          <option selected>Select Course</option>
+          <option *ngFor ="let c of courselist" [value]="c.id">{{c.name}}</option>
+        </select>
+        <br>
+        <div class="form-check">
+          <button class="btn btn-primary" (click)="addSubject(inp.value,courseId.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
