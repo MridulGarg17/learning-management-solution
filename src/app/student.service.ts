@@ -5,7 +5,7 @@ import  {  HttpClient,  HttpHeaders  }  from  '@angular/common/http';
     providedIn:  'root'
 })
 export  class  StudentService  {
-    BASE_URL  =  'https://pawanlms.herokuapp.com/students/';
+    BASE_URL  =  'https://lmsmridul.herokuapp.com/student/';
 
     httpOptions  =  {
         headers:  new  HttpHeaders({

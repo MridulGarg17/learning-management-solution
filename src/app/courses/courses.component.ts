@@ -31,7 +31,7 @@ export class CoursesComponent implements OnInit {
     }
 
     addCourse(name: string) {
-        console.log(name)
+        console.log(name+"name is here")
         this.data.postCourse(name)
             .subscribe((res) => {
                 console.log(res)

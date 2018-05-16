@@ -1,10 +1,10 @@
 ﻿<br>
 <div class="container">
-  <div class="card">
-    <div class="card-header">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
       Student List
     </div>
-    <div class="card-body">
+    <div class="panel-body">
       <table class="table table-hover">
         <thead>
         <th>S.no</th>
@@ -24,22 +24,22 @@
 </div>
 <br>
 <div class="container">
-  <div class="card ">
-    <div class="card-header">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
       ADD Student
     </div>
-    <div class="card-body">
+    <div class="panel-body">
       <form>
         <div class="form-group">
           <label for="name">Student Name</label>
           <input type="text" id="name" class="form-control" required #inp>
         </div>
-        <select class="custom-select" #courseId>
+        <select class="form-control" #courseId>
           <option selected>Select Course</option>
           <option *ngFor ="let c of courselist" [value]="c.id">{{c.name}}</option>
         </select>
         <br>
-        <select class="custom-select" #batchId>
+        <select class="form-control" #batchId>
           <option selected>Select Batch</option>
           <option *ngFor ="let c of batchlist" [value]="c.id">{{c.name}}</option>
         </select>
@@ -49,4 +49,5 @@
         </div>
       </form>
     </div>
+  </div>
   </div>

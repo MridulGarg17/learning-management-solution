@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     providedIn: 'root'
 })
 export class SubjectService {
-    BASE_URL = 'https://pawanlms.herokuapp.com/subjects';
+    BASE_URL = 'https://lmsmridul.herokuapp.com/subject';
 
     httpOptions = {
         headers: new HttpHeaders({

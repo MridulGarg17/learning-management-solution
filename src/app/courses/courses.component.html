@@ -1,51 +1,53 @@
 ﻿<br>
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-      Course List
-    </div>
-    <div class="card-body">
-      <table class="table table-hover">
-        <thead>
-        <th>S.no</th>
-        <th>Courses</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of courseList">
-            <td>{{c.id}}</td>
-            <td>{{c.name}}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Course List</div>
+    <div class="panel-body">
+<div class="card-body">
+  <table class="table table-hover">
+    <thead>
+    <th>S.no</th>
+    <th>Courses</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of courseList">
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </div>
   </div>
+  
 </div>
 <br>
 <div class="container">
-  <div class="card ">
-    <div class="card-header">
-      Course Offered
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Add New Course Here
     </div>
-    <div class="card-body">
+    <div class="panel-body">
 
       <div class="form-group">
         <label for="name">Course Name</label>
-        <input type="text" id="name" class="form-control" required #name>
+        <input type="text" id="name" class="form-control"  #cname>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" (click)="addCourse(name.value)">Submit</button>
+        <button class="btn btn-primary" (click)="addCourse(cname.value)">Submit</button>
       </div>
 
     </div>
+  </div>
   </div>
   <br>
 
   <div class="container">
-    <div class="card">
-      <div class="card-header">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
         Batch List
       </div>
-      <div class="card-body">
+      <div class="panel-body">
         <table class="table table-hover">
           <thead>
           <th>S.no</th>
@@ -65,17 +67,17 @@
 <br>
 
   <div class="container">
-    <div class="card ">
-      <div class="card-header">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
         Add new Batch
       </div>
-      <div class="card-body">
+      <div class="panel-body">
 
         <div class="form-group">
           <label for="name">Batch Name</label>
           <input type="text" id="name" class="form-control" required #name>
         </div>
-        <select class="custom-select" #courseId>
+        <select class="form-control" #courseId>
           <option selected>Select Course</option>
           <option *ngFor ="let c of courseList" [value]="c.id">{{c.name}}</option>
         </select>
@@ -84,4 +86,5 @@
         </div>
 
       </div>
+    </div>
     </div>
